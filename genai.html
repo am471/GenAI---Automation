@@ -1,0 +1,342 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Gen AI Solutions</title>
+<meta name="description" content="Enterprise-grade Generative AI solutions for automation, intelligence, and growth.">
+
+<style>
+/* =====================
+   GLOBAL STYLES
+===================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+body{
+    background:#050816;
+    color:#e5e7eb;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+@keyframes glow{
+    0%{box-shadow:0 0 20px rgba(56,189,248,0.3);}
+    100%{box-shadow:0 0 40px rgba(56,189,248,0.7);}
+}
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
+
+/* =====================
+   HEADER
+===================== */
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(5,8,22,0.8);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.header-wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+.logo{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:0.5px;
+}
+.logo span{
+    color:#38bdf8;
+}
+.btn{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+.btn-primary{
+    background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+    color:#020617;
+}
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+/* =====================
+   HERO
+===================== */
+.hero{
+    position:relative;
+    padding:110px 0 90px;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
+      radial-gradient(circle at 80% 40%, rgba(34,197,94,0.12), transparent 45%);
+    z-index:-1;
+}
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:50px;
+    align-items:center;
+}
+.hero-content{
+    animation:fadeUp 1s ease forwards;
+}
+.hero h1{
+    font-size:46px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+.hero h1 span{
+    background:linear-gradient(135deg,#38bdf8,#22c55e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.hero p{
+    font-size:18px;
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+.hero-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:16px;
+    padding:35px;
+    animation:float 6s ease-in-out infinite;
+}
+.hero-card h3{
+    margin-bottom:18px;
+}
+.hero-card li{
+    list-style:none;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+/* =====================
+   FEATURES
+===================== */
+.features{
+    padding:90px 0;
+}
+.features h2{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:60px;
+}
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+.feature{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+    transition:0.4s ease;
+    animation:fadeUp 1s ease forwards;
+}
+.feature:hover{
+    transform:translateY(-10px);
+    animation:glow 1.5s infinite alternate;
+}
+.feature h4{
+    margin-bottom:12px;
+    color:#38bdf8;
+}
+
+/* =====================
+   USE CASES
+===================== */
+.usecases{
+    padding:90px 0;
+    background:rgba(255,255,255,0.02);
+}
+.usecases h2{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
+}
+.usecase-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+.usecase{
+    padding:22px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    transition:0.3s ease;
+}
+.usecase:hover{
+    transform:scale(1.05);
+    color:#38bdf8;
+}
+
+/* =====================
+   CTA
+===================== */
+.cta{
+    padding:100px 0;
+    text-align:center;
+}
+.cta h2{
+    font-size:36px;
+    margin-bottom:15px;
+}
+.cta p{
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+.btn-lg{
+    font-size:18px;
+    padding:16px 34px;
+    border-radius:12px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer{
+    padding:25px 0;
+    text-align:center;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media(max-width:900px){
+    .hero-grid,
+    .feature-grid,
+    .usecase-grid{
+        grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-wrap">
+        <div class="logo">GenAI & AI Automation<span>.</span></div>
+        <a href="https://wa.me/918433879029" class="btn btn-primary">WhatsApp Us</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <h1>Enterprise-Grade <span>Generative AI</span><br>for Modern Businesses</h1>
+            <p>
+                Build intelligent systems that automate operations, enhance decision-making,
+                and deliver human-like digital experiences.
+            </p>
+            <a href="https://wa.me/918433879029" class="btn btn-primary btn-lg">
+                Start AI Consultation
+            </a>
+        </div>
+
+        <div class="hero-card">
+            <h3>Core Capabilities</h3>
+            <ul>
+                <li>AI Chatbots & Assistants</li>
+                <li>Custom Gen-AI Model Training</li>
+                <li>Workflow Automation</li>
+                <li>AI-Powered Analytics</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Why Our AI Platform</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h4>Enterprise Security</h4>
+                <p>Built with privacy-first and secure architecture.</p>
+            </div>
+            <div class="feature">
+                <h4>Custom Intelligence</h4>
+                <p>AI solutions tailored to your business workflows.</p>
+            </div>
+            <div class="feature">
+                <h4>Human-Like AI</h4>
+                <p>Context-aware, natural language interactions.</p>
+            </div>
+            <div class="feature">
+                <h4>Rapid Deployment</h4>
+                <p>Go live faster with scalable AI infrastructure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="usecases">
+    <div class="container">
+        <h2>High-Impact Use Cases</h2>
+        <div class="usecase-grid">
+            <div class="usecase">Customer Support Automation</div>
+            <div class="usecase">AI Sales Assistants</div>
+            <div class="usecase">Smart Education Systems</div>
+            <div class="usecase">Content & Media Generation</div>
+            <div class="usecase">Business Intelligence</div>
+            <div class="usecase">Internal AI Tools</div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Launch Your AI Vision Today</h2>
+        <p>Connect directly with our AI experts and get started.</p>
+        <a href="https://wa.me/918433879029" class="btn btn-primary btn-lg">
+            Chat on WhatsApp
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Premium Gen AI Solutions. All Rights Reserved.
+</footer>
+
+</body>
+</html>
