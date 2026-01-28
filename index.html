@@ -9,6 +9,55 @@
 
 <style>
 /* =====================
+   ACCORDION MODULES
+===================== */
+.accordion{
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    background:rgba(255,255,255,0.04);
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+.accordion-header{
+    padding:22px 26px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:20px;
+    font-weight:600;
+    color:#38bdf8;
+}
+
+.accordion-header span{
+    font-size:22px;
+    transition:transform .3s ease;
+}
+
+.accordion.active .accordion-header span{
+    transform:rotate(45deg);
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.accordion-body{
+    padding:0 26px 26px;
+}
+
+.accordion-body ul{
+    margin-left:18px;
+}
+
+.accordion-body li{
+    margin-bottom:8px;
+    color:#cbd5e1;
+}
+/* =====================
    GLOBAL
 ===================== */
 *{
@@ -265,6 +314,7 @@ footer{
         font-size:36px;
     }
 }
+
 </style>
 </head>
 
@@ -272,7 +322,7 @@ footer{
 
 <header>
     <div class="container header-wrap">
-        <div class="logo">The FS Solutions<span>.</span></div>
+        <div class="logo">GenAI<span>.</span></div>
         <a href="https://wa.me/918433879029" class="btn">WhatsApp Us</a>
     </div>
 </header>
@@ -327,176 +377,167 @@ footer{
 
 <!-- ================= COURSE ================= -->
 <section class="course">
-    <div class="container">
-        <h2>Generative AI & AI Automation – Professional Course</h2>
+    <div class="module">
+    <h3>Detailed Course Curriculum</h3>
+</div>
 
-        <!-- Course Overview -->
-        <div class="module">
-            <p>
-                This course is designed to provide a strong foundation and practical mastery of
-                <strong>Generative Artificial Intelligence (Gen AI)</strong> and its real-world applications.
-                The program focuses on hands-on learning, industry use cases, AI automation,
-                and career-oriented skills — without requiring any prior coding knowledge.
-            </p>
-        </div>
-
-        <!-- Key Info Cards -->
-        <div class="grid">
-            <div class="card">
-                <h3>Course Duration</h3>
-                <p>30 Days – Foundation (Crash Course)</p>
-                <p>60 Days – Professional Program</p>
-                <p>90 Days – Advanced Program with Live Projects</p>
-            </div>
-
-            <div class="card">
-                <h3>Eligibility</h3>
-                <p>Students (Any Stream)</p>
-                <p>Working Professionals</p>
-                <p>Entrepreneurs & Freelancers</p>
-                <p>Digital Marketing Learners</p>
-                <p>No Programming Background Required</p>
-            </div>
-
-            <div class="card">
-                <h3>Career Outcomes</h3>
-                <p>AI Content Specialist</p>
-                <p>AI Automation Executive</p>
-                <p>Digital Marketing AI Strategist</p>
-                <p>AI Chatbot Developer (No-Code)</p>
-                <p>Freelance AI Consultant</p>
-            </div>
-        </div>
-
-        <!-- Course Objectives -->
-        <div class="module">
-            <h3>Course Objectives</h3>
-            <ul>
-                <li>Understand core concepts of Generative AI</li>
-                <li>Use AI tools for content, design, marketing, and automation</li>
-                <li>Apply AI in business and productivity workflows</li>
-                <li>Build real-world AI-powered projects</li>
-                <li>Become job-ready or freelance-ready in AI roles</li>
-            </ul>
-        </div>
-
-        <!-- Detailed Curriculum -->
-        <div class="module">
-            <h3>Module 1: Introduction to Artificial Intelligence & Generative AI</h3>
+<!-- MODULE 1 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 1: Introduction to AI & Generative AI
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
             <ul>
                 <li>Fundamentals of Artificial Intelligence</li>
                 <li>Machine Learning vs Deep Learning vs Generative AI</li>
                 <li>Evolution of Generative AI</li>
                 <li>Understanding Large Language Models (LLMs)</li>
-                <li>Use cases across industries</li>
+                <li>Industry use cases</li>
                 <li>Limitations and risks of AI</li>
             </ul>
         </div>
+    </div>
+</div>
 
-        <div class="module">
-            <h3>Module 2: Generative AI Tools & Platforms</h3>
+<!-- MODULE 2 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 2: Generative AI Tools & Platforms
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
             <ul>
                 <li>AI platforms and interfaces</li>
-                <li>Text generation for blogs, ads, emails, and scripts</li>
+                <li>Text generation for blogs, ads, emails, scripts</li>
                 <li>AI-assisted research and summarization</li>
                 <li>Image generation for creatives and marketing</li>
-                <li>AI-based voice and speech generation</li>
+                <li>AI voice and speech generation</li>
                 <li>AI video generation tools</li>
             </ul>
         </div>
-
-        <div class="module">
-            <h3>Module 3: Prompt Engineering & AI Interaction</h3>
-            <ul>
-                <li>Introduction to prompt engineering</li>
-                <li>Prompt structure and best practices</li>
-                <li>Role-based and task-based prompting</li>
-                <li>Advanced prompting techniques</li>
-                <li>Prompt optimization and refinement</li>
-                <li>Industry-specific prompt templates</li>
-            </ul>
-        </div>
-
-        <div class="module">
-            <h3>Module 4: Generative AI for Digital Marketing</h3>
-            <ul>
-                <li>AI-powered SEO keyword research</li>
-                <li>Blog and landing page creation using AI</li>
-                <li>Social media content and reel scripting</li>
-                <li>Ad copy creation for Meta & Google Ads</li>
-                <li>Email marketing automation</li>
-                <li>Competitor analysis using AI tools</li>
-            </ul>
-        </div>
-
-        <div class="module">
-            <h3>Module 5: AI Automation & No-Code Workflows</h3>
-            <ul>
-                <li>Introduction to AI automation concepts</li>
-                <li>No-code and low-code automation platforms</li>
-                <li>AI-based lead generation and follow-ups</li>
-                <li>Website and messaging chatbots</li>
-                <li>CRM and AI workflow integration</li>
-                <li>Automated customer support systems</li>
-            </ul>
-        </div>
-
-        <div class="module">
-            <h3>Module 6: AI for Business, Productivity & Professional Use</h3>
-            <ul>
-                <li>AI for presentations and reports</li>
-                <li>AI tools for sales and customer support</li>
-                <li>Resume building and interview preparation</li>
-                <li>AI for HR, training, and documentation</li>
-                <li>Productivity enhancement with AI assistants</li>
-            </ul>
-        </div>
-
-        <div class="module">
-            <h3>Module 7: Ethics, Security & Future of AI</h3>
-            <ul>
-                <li>Ethical considerations in AI usage</li>
-                <li>Data privacy and security</li>
-                <li>Responsible AI in business</li>
-                <li>AI regulations and compliance</li>
-                <li>Career and freelancing opportunities</li>
-            </ul>
-        </div>
-
-        <div class="module">
-            <h3>Module 8: Live Projects & Practical Assignments</h3>
-            <ul>
-                <li>AI-powered content creation system</li>
-                <li>AI chatbot for a real business use case</li>
-                <li>AI-driven digital marketing campaign</li>
-                <li>Automation workflow project</li>
-                <li>Final capstone project presentation</li>
-            </ul>
-        </div>
-
-        <!-- Teaching & Certification -->
-        <div class="module">
-            <h3>Teaching Methodology</h3>
-            <ul>
-                <li>Instructor-led live sessions (Offline / Online)</li>
-                <li>Hands-on practical demonstrations</li>
-                <li>Weekly assignments and assessments</li>
-                <li>Case studies and real-world scenarios</li>
-                <li>Doubt-clearing and revision sessions</li>
-            </ul>
-        </div>
-
-        <div class="module">
-            <h3>Certification & Evaluation</h3>
-            <ul>
-                <li>Course Completion Certificate</li>
-                <li>Project Completion Certificate</li>
-                <li>Internship / Experience Certificate (Optional)</li>
-                <li>Portfolio-ready AI projects</li>
-            </ul>
-        </div>
-
     </div>
+</div>
+
+<!-- MODULE 3 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 3: Prompt Engineering & AI Interaction
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ul>
+                <li>Prompt engineering fundamentals</li>
+                <li>Prompt structure and best practices</li>
+                <li>Role-based & task-based prompting</li>
+                <li>Advanced prompting techniques</li>
+                <li>Prompt optimization</li>
+                <li>Industry prompt templates</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- MODULE 4 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 4: Generative AI for Digital Marketing
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ul>
+                <li>AI-powered SEO & content planning</li>
+                <li>Blog & landing page creation</li>
+                <li>Social media & reel scripting</li>
+                <li>Ad copy for Meta & Google Ads</li>
+                <li>Email marketing automation</li>
+                <li>Competitor analysis</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- MODULE 5 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 5: AI Automation & No-Code Workflows
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ul>
+                <li>AI automation fundamentals</li>
+                <li>No-code & low-code platforms</li>
+                <li>AI lead generation workflows</li>
+                <li>Website & WhatsApp chatbots</li>
+                <li>CRM integration</li>
+                <li>Customer support automation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- MODULE 6 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 6: AI for Business & Productivity
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ul>
+                <li>AI for presentations & reports</li>
+                <li>AI tools for sales & support</li>
+                <li>Resume & interview preparation</li>
+                <li>HR & documentation automation</li>
+                <li>Productivity assistants</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- MODULE 7 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 7: Ethics, Security & Future of AI
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ul>
+                <li>Ethical AI usage</li>
+                <li>Data privacy & security</li>
+                <li>Responsible AI practices</li>
+                <li>AI regulations & compliance</li>
+                <li>Career & freelancing opportunities</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- MODULE 8 -->
+<div class="accordion">
+    <div class="accordion-header">
+        Module 8: Live Projects & Capstone
+        <span>+</span>
+    </div>
+    <div class="accordion-content">
+        <div class="accordion-body">
+            <ul>
+                <li>AI-powered content system</li>
+                <li>Real-world chatbot project</li>
+                <li>AI marketing campaign</li>
+                <li>Automation workflow project</li>
+                <li>Final capstone presentation</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 </section>
 
 <!-- ================= CTA ================= -->
@@ -511,6 +552,22 @@ footer{
 <footer>
     © 2026 GenAI Solutions & Training. All Rights Reserved.
 </footer>
+<script>
+document.querySelectorAll('.accordion-header').forEach(header=>{
+    header.addEventListener('click',()=>{
+        const accordion = header.parentElement;
+        const content = accordion.querySelector('.accordion-content');
+
+        accordion.classList.toggle('active');
+
+        if(accordion.classList.contains('active')){
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }else{
+            content.style.maxHeight = null;
+        }
+    });
+});
+</script>
 
 </body>
 </html>
