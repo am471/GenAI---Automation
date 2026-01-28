@@ -3,20 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gen AI Solutions & Professional Course</title>
-<meta name="description" content="Premium Generative AI solutions and professional Gen AI & AI Automation course with live projects.">
+
+<title>The FS Solutions</title>
+<meta name="description" content="Enterprise GenAI solutions and professional Generative AI & Automation course.">
 
 <style>
+/* =====================
+   GLOBAL
+===================== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI', Arial, sans-serif;
+    font-family:'Inter','Segoe UI',Arial,sans-serif;
 }
 body{
     background:#050816;
     color:#e5e7eb;
-    line-height:1.7;
+    line-height:1.6;
+    overflow-x:hidden;
 }
 .container{
     width:90%;
@@ -26,30 +31,34 @@ body{
 section{
     padding:90px 0;
 }
-h1,h2,h3{
-    line-height:1.3;
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
 }
-h2{
-    font-size:34px;
-    margin-bottom:30px;
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
 }
-h3{
-    font-size:22px;
-    margin-bottom:15px;
-    color:#38bdf8;
-}
-p{
-    color:#cbd5e1;
+@keyframes glow{
+    from{box-shadow:0 0 20px rgba(56,189,248,0.3);}
+    to{box-shadow:0 0 40px rgba(56,189,248,0.7);}
 }
 
-/* Header */
+/* =====================
+   HEADER
+===================== */
 header{
     position:sticky;
     top:0;
-    background:rgba(5,8,22,0.9);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
     z-index:100;
+    background:rgba(5,8,22,0.85);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 .header-wrap{
     display:flex;
@@ -64,6 +73,10 @@ header{
 .logo span{
     color:#38bdf8;
 }
+
+/* =====================
+   BUTTONS
+===================== */
 .btn{
     text-decoration:none;
     padding:12px 24px;
@@ -71,16 +84,40 @@ header{
     font-weight:600;
     background:linear-gradient(135deg,#38bdf8,#22c55e);
     color:#020617;
+    transition:.3s ease;
+}
+.btn:hover{
+    transform:translateY(-2px);
+}
+.btn-lg{
+    padding:16px 36px;
+    font-size:18px;
 }
 
-/* Hero */
+/* =====================
+   HERO – BUSINESS
+===================== */
 .hero{
+    position:relative;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
     background:
-      radial-gradient(circle at 20% 20%, rgba(56,189,248,0.18), transparent 40%),
-      radial-gradient(circle at 80% 40%, rgba(34,197,94,0.15), transparent 45%);
+        radial-gradient(circle at 20% 20%, rgba(56,189,248,0.15), transparent 40%),
+        radial-gradient(circle at 80% 40%, rgba(34,197,94,0.12), transparent 45%);
+    z-index:-1;
+}
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:50px;
+    align-items:center;
 }
 .hero h1{
     font-size:46px;
+    line-height:1.2;
     margin-bottom:20px;
 }
 .hero h1 span{
@@ -90,15 +127,87 @@ header{
 }
 .hero p{
     font-size:18px;
-    max-width:850px;
+    color:#cbd5e1;
     margin-bottom:35px;
 }
+.hero-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:35px;
+    animation:float 6s ease-in-out infinite;
+}
+.hero-card li{
+    list-style:none;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-/* Cards */
-.grid{
+/* =====================
+   FEATURES
+===================== */
+.features h2,
+.usecases h2,
+.course h2,
+.cta h2{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:50px;
+}
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+.feature{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    animation:fadeUp 1s ease forwards;
+}
+.feature:hover{
+    transform:translateY(-8px);
+    animation:glow 1.5s infinite alternate;
+}
+.feature h4{
+    color:#38bdf8;
+    margin-bottom:12px;
+}
+
+/* =====================
+   USE CASES
+===================== */
+.usecases{
+    background:rgba(255,255,255,0.02);
+}
+.usecase-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:25px;
+}
+.usecase{
+    padding:22px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    text-align:center;
+    transition:.3s;
+}
+.usecase:hover{
+    transform:scale(1.05);
+    color:#38bdf8;
+}
+
+/* =====================
+   COURSE SECTION
+===================== */
+.course .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-bottom:60px;
 }
 .card{
     background:rgba(255,255,255,0.04);
@@ -106,19 +215,12 @@ header{
     border-radius:16px;
     padding:30px;
 }
-
-/* Divider */
-.divider{
-    text-align:center;
-    padding:40px 0;
-    font-size:14px;
-    color:#94a3b8;
-    letter-spacing:2px;
+.card h3{
+    color:#38bdf8;
+    margin-bottom:15px;
 }
-
-/* Syllabus */
 .module{
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 .module ul{
     margin-left:18px;
@@ -128,32 +230,39 @@ header{
     color:#cbd5e1;
 }
 
-/* CTA */
+/* =====================
+   CTA
+===================== */
 .cta{
     text-align:center;
 }
-.cta h2{
-    font-size:38px;
-}
 .cta p{
-    margin:15px 0 35px;
+    color:#cbd5e1;
+    margin-bottom:35px;
 }
 
-/* Footer */
+/* =====================
+   FOOTER
+===================== */
 footer{
     text-align:center;
-    padding:30px 0;
+    padding:25px 0;
     border-top:1px solid rgba(255,255,255,0.08);
     color:#94a3b8;
 }
 
-/* Responsive */
+/* =====================
+   RESPONSIVE
+===================== */
 @media(max-width:900px){
-    .grid{
+    .hero-grid,
+    .feature-grid,
+    .usecase-grid,
+    .course .grid{
         grid-template-columns:1fr;
     }
-    h1{
-        font-size:34px;
+    .hero h1{
+        font-size:36px;
     }
 }
 </style>
@@ -168,174 +277,239 @@ footer{
     </div>
 </header>
 
-<!-- ================= BUSINESS SECTION ================= -->
-
+<!-- ================= HERO BUSINESS ================= -->
 <section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>Enterprise-Grade <span>Generative AI</span><br>for Modern Businesses</h1>
+            <p>Build intelligent systems that automate operations and deliver human-like digital experiences.</p>
+            <a href="https://wa.me/918433879029" class="btn btn-lg">Start AI Consultation</a>
+        </div>
+        <div class="hero-card">
+            <h3>Core Capabilities</h3>
+            <ul>
+                <li>AI Chatbots & Assistants</li>
+                <li>Custom Gen-AI Models</li>
+                <li>Workflow Automation</li>
+                <li>AI-Powered Analytics</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="features">
     <div class="container">
-        <h1>Enterprise-Grade <span>Generative AI Solutions</span></h1>
-        <p>
-            We design and deploy powerful Generative AI systems that automate workflows,
-            enhance productivity, and deliver intelligent, human-like digital experiences
-            for businesses and professionals.
-        </p>
-        <a href="https://wa.me/918433879029" class="btn">Get AI Consultation</a>
-    </div>
-</section>
-
-<section>
-    <div class="container grid">
-        <div class="card">
-            <h3>What We Build</h3>
-            <p>AI Chatbots & Assistants</p>
-            <p>AI Automation Workflows</p>
-            <p>Marketing & Sales AI Tools</p>
-            <p>Business Productivity AI</p>
-        </div>
-        <div class="card">
-            <h3>Who We Serve</h3>
-            <p>Startups & Enterprises</p>
-            <p>Educational Institutions</p>
-            <p>Marketing Agencies</p>
-            <p>Entrepreneurs & Freelancers</p>
-        </div>
-        <div class="card">
-            <h3>Why Choose Us</h3>
-            <p>No-Code & Business-Friendly AI</p>
-            <p>Practical & Scalable Solutions</p>
-            <p>Fast Deployment</p>
-            <p>Real-World Use Cases</p>
+        <h2>Why Choose Our AI Platform</h2>
+        <div class="feature-grid">
+            <div class="feature"><h4>Enterprise Security</h4><p>Privacy-first secure architecture.</p></div>
+            <div class="feature"><h4>Custom Intelligence</h4><p>Tailored AI workflows.</p></div>
+            <div class="feature"><h4>Human-Like AI</h4><p>Context-aware interactions.</p></div>
+            <div class="feature"><h4>Rapid Deployment</h4><p>Scalable AI infrastructure.</p></div>
         </div>
     </div>
 </section>
 
-<div class="divider">PROFESSIONAL TRAINING PROGRAM</div>
+<!-- ================= USE CASES ================= -->
+<section class="usecases">
+    <div class="container">
+        <h2>High-Impact Use Cases</h2>
+        <div class="usecase-grid">
+            <div class="usecase">Customer Support Automation</div>
+            <div class="usecase">AI Sales Assistants</div>
+            <div class="usecase">Smart Education Systems</div>
+            <div class="usecase">Content & Media Generation</div>
+            <div class="usecase">Business Intelligence</div>
+            <div class="usecase">Internal AI Tools</div>
+        </div>
+    </div>
+</section>
 
-<!-- ================= COURSE SECTION ================= -->
-
-<section>
+<!-- ================= COURSE ================= -->
+<section class="course">
     <div class="container">
         <h2>Generative AI & AI Automation – Professional Course</h2>
-        <p>
-            A hands-on, career-oriented program designed to make students and professionals
-            job-ready in Generative AI and AI automation — without requiring any coding background.
-        </p>
-    </div>
-</section>
 
-<section>
-    <div class="container grid">
-        <div class="card">
-            <h3>Course Duration</h3>
-            <p>30 Days – Foundation</p>
-            <p>60 Days – Professional Program</p>
-            <p>90 Days – Advanced with Live Projects</p>
-        </div>
-        <div class="card">
-            <h3>Eligibility</h3>
-            <p>Students (Any Stream)</p>
-            <p>Working Professionals</p>
-            <p>Entrepreneurs & Freelancers</p>
-            <p>No Coding Required</p>
-        </div>
-        <div class="card">
-            <h3>Career Outcomes</h3>
-            <p>AI Content Specialist</p>
-            <p>AI Automation Executive</p>
-            <p>AI Chatbot Developer</p>
-            <p>Freelance AI Consultant</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2>Detailed Course Syllabus</h2>
-
+        <!-- Course Overview -->
         <div class="module">
-            <h3>Module 1: Introduction to AI & Generative AI</h3>
+            <p>
+                This course is designed to provide a strong foundation and practical mastery of
+                <strong>Generative Artificial Intelligence (Gen AI)</strong> and its real-world applications.
+                The program focuses on hands-on learning, industry use cases, AI automation,
+                and career-oriented skills — without requiring any prior coding knowledge.
+            </p>
+        </div>
+
+        <!-- Key Info Cards -->
+        <div class="grid">
+            <div class="card">
+                <h3>Course Duration</h3>
+                <p>30 Days – Foundation (Crash Course)</p>
+                <p>60 Days – Professional Program</p>
+                <p>90 Days – Advanced Program with Live Projects</p>
+            </div>
+
+            <div class="card">
+                <h3>Eligibility</h3>
+                <p>Students (Any Stream)</p>
+                <p>Working Professionals</p>
+                <p>Entrepreneurs & Freelancers</p>
+                <p>Digital Marketing Learners</p>
+                <p>No Programming Background Required</p>
+            </div>
+
+            <div class="card">
+                <h3>Career Outcomes</h3>
+                <p>AI Content Specialist</p>
+                <p>AI Automation Executive</p>
+                <p>Digital Marketing AI Strategist</p>
+                <p>AI Chatbot Developer (No-Code)</p>
+                <p>Freelance AI Consultant</p>
+            </div>
+        </div>
+
+        <!-- Course Objectives -->
+        <div class="module">
+            <h3>Course Objectives</h3>
             <ul>
-                <li>AI fundamentals & evolution</li>
-                <li>ML vs Deep Learning vs Gen AI</li>
-                <li>Large Language Models (LLMs)</li>
-                <li>Industry use cases & limitations</li>
+                <li>Understand core concepts of Generative AI</li>
+                <li>Use AI tools for content, design, marketing, and automation</li>
+                <li>Apply AI in business and productivity workflows</li>
+                <li>Build real-world AI-powered projects</li>
+                <li>Become job-ready or freelance-ready in AI roles</li>
+            </ul>
+        </div>
+
+        <!-- Detailed Curriculum -->
+        <div class="module">
+            <h3>Module 1: Introduction to Artificial Intelligence & Generative AI</h3>
+            <ul>
+                <li>Fundamentals of Artificial Intelligence</li>
+                <li>Machine Learning vs Deep Learning vs Generative AI</li>
+                <li>Evolution of Generative AI</li>
+                <li>Understanding Large Language Models (LLMs)</li>
+                <li>Use cases across industries</li>
+                <li>Limitations and risks of AI</li>
             </ul>
         </div>
 
         <div class="module">
             <h3>Module 2: Generative AI Tools & Platforms</h3>
             <ul>
-                <li>Text, image, voice & video generation</li>
-                <li>AI research & summarization</li>
-                <li>Creative & marketing applications</li>
+                <li>AI platforms and interfaces</li>
+                <li>Text generation for blogs, ads, emails, and scripts</li>
+                <li>AI-assisted research and summarization</li>
+                <li>Image generation for creatives and marketing</li>
+                <li>AI-based voice and speech generation</li>
+                <li>AI video generation tools</li>
             </ul>
         </div>
 
         <div class="module">
-            <h3>Module 3: Prompt Engineering</h3>
+            <h3>Module 3: Prompt Engineering & AI Interaction</h3>
             <ul>
-                <li>Prompt structures & techniques</li>
-                <li>Advanced prompting strategies</li>
+                <li>Introduction to prompt engineering</li>
+                <li>Prompt structure and best practices</li>
+                <li>Role-based and task-based prompting</li>
+                <li>Advanced prompting techniques</li>
+                <li>Prompt optimization and refinement</li>
                 <li>Industry-specific prompt templates</li>
             </ul>
         </div>
 
         <div class="module">
-            <h3>Module 4: Gen AI for Digital Marketing</h3>
+            <h3>Module 4: Generative AI for Digital Marketing</h3>
             <ul>
-                <li>SEO & content planning</li>
-                <li>Social media & ad copy</li>
+                <li>AI-powered SEO keyword research</li>
+                <li>Blog and landing page creation using AI</li>
+                <li>Social media content and reel scripting</li>
+                <li>Ad copy creation for Meta & Google Ads</li>
                 <li>Email marketing automation</li>
+                <li>Competitor analysis using AI tools</li>
             </ul>
         </div>
 
         <div class="module">
             <h3>Module 5: AI Automation & No-Code Workflows</h3>
             <ul>
-                <li>No-code automation platforms</li>
-                <li>Chatbots & lead automation</li>
-                <li>CRM & support automation</li>
+                <li>Introduction to AI automation concepts</li>
+                <li>No-code and low-code automation platforms</li>
+                <li>AI-based lead generation and follow-ups</li>
+                <li>Website and messaging chatbots</li>
+                <li>CRM and AI workflow integration</li>
+                <li>Automated customer support systems</li>
             </ul>
         </div>
 
         <div class="module">
-            <h3>Module 6: AI for Business & Productivity</h3>
+            <h3>Module 6: AI for Business, Productivity & Professional Use</h3>
             <ul>
-                <li>Reports, presentations & sales AI</li>
-                <li>HR, training & documentation</li>
-                <li>AI productivity assistants</li>
+                <li>AI for presentations and reports</li>
+                <li>AI tools for sales and customer support</li>
+                <li>Resume building and interview preparation</li>
+                <li>AI for HR, training, and documentation</li>
+                <li>Productivity enhancement with AI assistants</li>
             </ul>
         </div>
 
         <div class="module">
-            <h3>Module 7: Ethics, Security & AI Careers</h3>
+            <h3>Module 7: Ethics, Security & Future of AI</h3>
             <ul>
-                <li>Responsible AI usage</li>
-                <li>Privacy & compliance</li>
-                <li>Freelancing & career paths</li>
+                <li>Ethical considerations in AI usage</li>
+                <li>Data privacy and security</li>
+                <li>Responsible AI in business</li>
+                <li>AI regulations and compliance</li>
+                <li>Career and freelancing opportunities</li>
             </ul>
         </div>
 
         <div class="module">
-            <h3>Module 8: Live Projects & Capstone</h3>
+            <h3>Module 8: Live Projects & Practical Assignments</h3>
             <ul>
-                <li>AI chatbot project</li>
-                <li>AI marketing automation</li>
-                <li>Final capstone presentation</li>
+                <li>AI-powered content creation system</li>
+                <li>AI chatbot for a real business use case</li>
+                <li>AI-driven digital marketing campaign</li>
+                <li>Automation workflow project</li>
+                <li>Final capstone project presentation</li>
             </ul>
         </div>
+
+        <!-- Teaching & Certification -->
+        <div class="module">
+            <h3>Teaching Methodology</h3>
+            <ul>
+                <li>Instructor-led live sessions (Offline / Online)</li>
+                <li>Hands-on practical demonstrations</li>
+                <li>Weekly assignments and assessments</li>
+                <li>Case studies and real-world scenarios</li>
+                <li>Doubt-clearing and revision sessions</li>
+            </ul>
+        </div>
+
+        <div class="module">
+            <h3>Certification & Evaluation</h3>
+            <ul>
+                <li>Course Completion Certificate</li>
+                <li>Project Completion Certificate</li>
+                <li>Internship / Experience Certificate (Optional)</li>
+                <li>Portfolio-ready AI projects</li>
+            </ul>
+        </div>
+
     </div>
 </section>
 
+<!-- ================= CTA ================= -->
 <section class="cta">
     <div class="container">
-        <h2>Build, Learn & Launch with Generative AI</h2>
-        <p>Whether you want AI solutions for business or career growth — start here.</p>
-        <a href="https://wa.me/918433879029" class="btn">Enroll / Consult on WhatsApp</a>
+        <h2>Start Your AI Journey Today</h2>
+        <p>Consult with experts or enroll in our professional program.</p>
+        <a href="https://wa.me/918433879029" class="btn btn-lg">Chat on WhatsApp</a>
     </div>
 </section>
 
 <footer>
-    © 2026 Gen AI Solutions & Professional Training. All Rights Reserved.
+    © 2026 GenAI Solutions & Training. All Rights Reserved.
 </footer>
 
 </body>
